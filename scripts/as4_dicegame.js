@@ -286,12 +286,8 @@ function updateInstructions(betAmount) {
   
 }
 
-function keyPressed() {
-   // print(key)
-  
-  if (key === "z") {
-
-    if (rollLock === false) {
+function rollCheck() {
+  if (rollLock === false) {
       rollLock = true
       betTotal = 0
       result = undefined
@@ -318,6 +314,14 @@ function keyPressed() {
         } else {
           print("no")
         }
+}
+
+function keyPressed() {
+   // print(key)
+  
+  if (key === "z") {
+
+    rollCheck();
 
     }
 
@@ -341,6 +345,7 @@ updateInstructions(betAmount)
 
 function mousePressed() {
     //print(mouseX, mouseY)
+  rollCheck();
 }
 
 function saveWallet() {
